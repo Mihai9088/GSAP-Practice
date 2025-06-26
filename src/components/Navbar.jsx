@@ -1,7 +1,7 @@
-import React from "react";
-import { navLinks } from "../../constants";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+import { navLinks } from "../../constants/index.js";
 
 const Navbar = () => {
   useGSAP(() => {
@@ -11,6 +11,7 @@ const Navbar = () => {
         start: "bottom top",
       },
     });
+
     navTween.fromTo(
       "nav",
       { backgroundColor: "transparent" },
@@ -18,7 +19,7 @@ const Navbar = () => {
         backgroundColor: "#00000050",
         backgroundFilter: "blur(10px)",
         duration: 1,
-        ease: Power1.easeInOut,
+        ease: "power1.inOut",
       }
     );
   });
@@ -28,7 +29,7 @@ const Navbar = () => {
       <div>
         <a href="#home" className="flex items-center gap-2">
           <img src="/images/logo.png" alt="logo" />
-          <p>Golden Stir</p>
+          <p>Velvet Pour</p>
         </a>
 
         <ul>
@@ -42,5 +43,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
